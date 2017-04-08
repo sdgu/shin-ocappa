@@ -1,6 +1,14 @@
-	<h3>{{title}}</h3>
+<h3>{{title}}</h3>
 
-	<span>Title: </span><input [(ngModel)]="titleToAdd"> <br>
-	<span>Desc: </span><textarea [(ngModel)]="descToAdd"></textarea> <br>
-	<span>Password: </span><input [(ngModel)]="pass"> <br>
+<div class="submissionTable">
+	<div class="tableRow">
+		<span class="textDescCol">Title: </span><input class="submissionCol" [(ngModel)]="titleToAdd">
+	</div>
+	<div class="tableRow">
+		<span class="textDescCol">Desc: </span><textarea class="submissionCol" [(ngModel)]="descToAdd"></textarea>
+	</div>
+	<div class="tableRow">	
+		<span class="textDescCol">Password: </span><input class="submissionCol" [(ngModel)]="pass">
+	</div>
 	<button (click)="addStory(titleToAdd, descToAdd, pass)">Add Story</button>
+</div>
