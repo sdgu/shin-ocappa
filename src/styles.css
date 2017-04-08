@@ -5,7 +5,8 @@ html, body
   /*background: #F5F6F6;*/
   /*background: #C2E1E5;*/
   background: #D5E3E3;
-  font-family: Ubuntu, "times new roman", times, roman, serif;
+  font-family: Ubuntu;
+  /*, "times new roman", times, roman, serif;*/
 }
 
 .pagewrapper
