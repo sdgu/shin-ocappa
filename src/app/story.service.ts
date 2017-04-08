@@ -14,12 +14,29 @@ export class StoryService
   private storyUrl = "api/stories";
   constructor(private http: Http) { };
 
+  private headers = new Headers({'Content-Type': 'application/json'});
+
   getStories(): Observable<Story[]>
   {
   	return this.http.get(this.storyUrl)
   	.map(res => res.json());
   }
 
+  create(title: string, desc: string, password: string): Promise<Story>
+  {
+  	return this.http
+  		   .post(this.storyUrl, JSON.stringify({title: title, desc: desc, pass: password}),
+  		   	{headers: this.headers})
+  		   .toPromise()
+  		   .then(res => res.json().data as Story)
+  		   .catch(this.handleError);
+  }
+
+	private handleError(error: any): Promise<any>
+	{
+		console.error("error", error);
+		return Promise.reject(error.message || error);
+	}
   // Math.floor((Math.random() * 10) + 1); 
 
   // getRandomStory(title: string): Promise<Story>

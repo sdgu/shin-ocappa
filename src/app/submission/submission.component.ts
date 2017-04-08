@@ -17,11 +17,15 @@ export class SubmissionComponent implements OnInit {
   titleToAdd: string;
   descToAdd: string;
 
-  constructor() { }
+  constructor(private storyService: StoryService) { }
 
-  addStory(): void
+  addStory(title: string, desc: string, password: string): void
   {
-  	alert(this.titleToAdd + "\n" + this.descToAdd);
+  	this.storyService.create(title, desc, password)
+  	.then(story =>
+  	{
+  		
+  	})
   }
 
 

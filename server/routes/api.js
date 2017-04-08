@@ -9,6 +9,7 @@ const storySchema = require("../schema/storySchema");
 require("../../env");
 
 const dbUri = process.env.dbUri;
+const submissionPass = process.env.PASS;
 
 mongoose.connect(dbUri);
 const db = mongoose.connection;
@@ -62,5 +63,31 @@ router.get("/stories", (req, res) =>
 	})
 })
 
+router.post("/stories", (req, res) =>
+{
+	let password = req.body.pass;
+
+	if (password === submissionPass)
+	{
+		let submission = new Story(
+		{
+			title: req.body.title,
+			desc: req.body.desc
+		});
+		submission.save((err, docs) =>
+		{
+			if (err) return console.error(err);
+			console.log("submitted this: " + docs);
+		})
+	}
+	else
+	{
+		console.log("wrong pass, can't submit");
+		res.end("wrong pass, can't submit");
+	}
+
+
+
+})
 
 module.exports = router;

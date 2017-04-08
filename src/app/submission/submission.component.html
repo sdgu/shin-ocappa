@@ -1,5 +1,6 @@
 	<h3>{{title}}</h3>
 
-	<input [(ngModel)]="titleToAdd"> <br>
-	<textarea [(ngModel)]="descToAdd"></textarea> <br>
-	<button (click)="addStory()">Add Story</button>
+	<span>Title: </span><input [(ngModel)]="titleToAdd"> <br>
+	<span>Desc: </span><textarea [(ngModel)]="descToAdd"></textarea> <br>
+	<span>Password: </span><input [(ngModel)]="pass"> <br>
+	<button (click)="addStory(titleToAdd, descToAdd, pass)">Add Story</button>
