@@ -20,4 +20,14 @@ export class StoryService
   	.map(res => res.json());
   }
 
+  // Math.floor((Math.random() * 10) + 1); 
+
+  // getRandomStory(title: string): Promise<Story>
+  // {
+  // 	return this.getStories.then(stories =>
+  // 	{
+  // 		stories.find(story => story.title === title)
+  // 	})
+  // }
+
 }

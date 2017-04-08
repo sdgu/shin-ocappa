@@ -36,6 +36,11 @@ export class StoriesComponent implements OnInit
   	// this.stories = [{title: "pastaman origins", desc: "creation"}]
   }
 
+
+  
+
+
+
   ngOnInit() 
   {
   	this.getStories();

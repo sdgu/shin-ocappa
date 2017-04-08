@@ -6,13 +6,17 @@ import { RouterModule } from "@angular/router";
 
 import { AppComponent } from './app.component';
 import { StoriesComponent } from './stories/stories.component';
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 import { AppRoutingModule } from "./app-routing.module";
+
+import { StoryService } from "./story.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     StoriesComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,7 +24,7 @@ import { AppRoutingModule } from "./app-routing.module";
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [StoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

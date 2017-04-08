@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
+
+//temporary setup
 const stories = 
 [{
 	title: "pastaman origins",
