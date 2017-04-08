@@ -24,7 +24,7 @@ export class SubmissionComponent implements OnInit {
   	this.storyService.create(title, desc, password)
   	.then(story =>
   	{
-  		
+  		alert("created the story with title " + story.title);
   	})
   }
 

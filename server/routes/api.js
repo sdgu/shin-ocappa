@@ -69,16 +69,44 @@ router.post("/stories", (req, res) =>
 
 	if (password === submissionPass)
 	{
-		let submission = new Story(
-		{
-			title: req.body.title,
-			desc: req.body.desc
-		});
-		submission.save((err, docs) =>
+
+
+		Story.findOne({"title": req.body.title}, (err, docs) =>
 		{
 			if (err) return console.error(err);
-			console.log("submitted this: " + docs);
+			console.log(docs);
+			if (docs === null)
+			{
+				// if (docs.title !== req.body.title)
+				{
+					let submission = new Story(
+					{
+						title: req.body.title,
+						desc: req.body.desc
+					});
+					submission.save((err, docs) =>
+					{
+						if (err) return console.error(err);
+						console.log("submitted this: " + docs);
+						res.end("submitted this: " + docs);
+					})
+				}
+				// else
+				{
+					
+				}				
+			}
+			else
+			{
+				console.log(docs._id);
+				console.log("title already exists");
+				res.send("title already exists");
+			}
+
+
 		})
+
+
 	}
 	else
 	{

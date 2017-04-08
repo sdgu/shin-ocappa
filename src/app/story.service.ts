@@ -32,6 +32,17 @@ export class StoryService
   		   .catch(this.handleError);
   }
 
+  update(story: Story): Promise<Story>
+  {
+  	let url = `${this.storyUrl}/${story._id}`;
+  	// alert(url);
+  	return this.http
+  		   .put(url, JSON.stringify(story), {headers: this.headers})
+  		   .toPromise()
+  		   .then(() => story)
+  		   .catch(this.handleError);
+  }
+
 	private handleError(error: any): Promise<any>
 	{
 		console.error("error", error);

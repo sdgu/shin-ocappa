@@ -22,6 +22,7 @@ export class StoriesComponent implements OnInit
   mode = "Observable";
 
   selectedStory: Story;
+  selectedStoryEditor: Story;
 
   titleToAdd: string;
 
@@ -42,11 +43,33 @@ export class StoriesComponent implements OnInit
   	this.selectedStory = story;
   }
   
-  addStory(): void
+  // addStory(): void
+  // {
+  // 	alert(this.titleToAdd);
+  // }
+
+  editStory(story): void
   {
-  	alert(this.titleToAdd);
+  	
+  	this.selectedStory = story;
+  	this.selectedStoryEditor = story;
   }
 
+  updateStory(story): void
+  {
+  	this.selectedStoryEditor = 
+  	{
+  		title: "",
+  		desc: "",
+  		_id: ""
+  	}
+
+  	this.storyService.update(story)
+				  	 .then(() => 
+				  	 {
+
+				  	 })
+  }
 
   ngOnInit() 
   {

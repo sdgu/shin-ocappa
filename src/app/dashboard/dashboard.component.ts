@@ -26,7 +26,13 @@ export class DashboardComponent implements OnInit {
   		// let rand = Math.floor((Math.random() * stories.length()));
   		// this.stories = [stories[rand]];
 
-  		this.stories = [{title: "o.o", desc: "abc"}]
+  		this.stories = [
+  		{
+  			title: "o.o", 
+  			desc: "abc",
+  			_id: "abcd"
+
+  		}]
   	});
   }
 
