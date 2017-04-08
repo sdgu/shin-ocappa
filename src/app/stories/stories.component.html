@@ -1,7 +1,13 @@
 <h2>Stories</h2>
 <ul class="stories">
-	<li *ngFor="let story of stories">
+	<li *ngFor="let story of stories"
+		(click)="onSelect(story)">
 	<span>{{story.title}}</span> <br> {{story.desc}}
 	</li>
+	<div *ngIf="selectedStory">
+		<h2>{{selectedStory.title}} is my story</h2>
+	</div>
+	<input [(ngModel)]="titleToAdd">
+	<button (click)="addStory()">Add Story</button>
 </ul>
 

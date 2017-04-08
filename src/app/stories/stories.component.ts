@@ -21,8 +21,9 @@ export class StoriesComponent implements OnInit
 
   mode = "Observable";
 
-
   selectedStory: Story;
+
+  titleToAdd: string;
 
   constructor(private storyService: StoryService) { }
 
@@ -36,9 +37,15 @@ export class StoriesComponent implements OnInit
   	// this.stories = [{title: "pastaman origins", desc: "creation"}]
   }
 
-
+  onSelect(story: Story): void
+  {
+  	this.selectedStory = story;
+  }
   
-
+  addStory(): void
+  {
+  	alert(this.titleToAdd);
+  }
 
 
   ngOnInit() 
