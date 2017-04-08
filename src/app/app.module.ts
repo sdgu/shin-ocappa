@@ -11,12 +11,14 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AppRoutingModule } from "./app-routing.module";
 
 import { StoryService } from "./story.service";
+import { SubmissionComponent } from './submission/submission.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StoriesComponent,
     DashboardComponent,
+    SubmissionComponent,
   ],
   imports: [
     BrowserModule,
