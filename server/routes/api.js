@@ -6,7 +6,7 @@ const storySchema = require("../schema/storySchema");
 
 // const dbUser = process.env.dbUser;
 // const dbPass = process.env.dbPass;
-require("../../env");
+// require("../../env");
 
 const dbUri = process.env.dbUri;
 const submissionPass = process.env.PASS;
