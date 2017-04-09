@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 const api = require("./server/routes/api");
 
-// require("./env");
+require("./env");
 
 const app = express();
 

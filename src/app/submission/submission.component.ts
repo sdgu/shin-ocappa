@@ -16,6 +16,7 @@ export class SubmissionComponent implements OnInit {
 
   titleToAdd: string;
   descToAdd: string;
+  pass: string;
 
   constructor(private storyService: StoryService) { }
 
