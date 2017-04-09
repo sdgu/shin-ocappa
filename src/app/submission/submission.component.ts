@@ -26,6 +26,7 @@ export class SubmissionComponent implements OnInit {
   	{
   		alert("created the story with title " + story.title);
   	})
+
   }
 
 

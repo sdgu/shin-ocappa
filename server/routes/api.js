@@ -88,7 +88,7 @@ router.post("/stories", (req, res) =>
 					{
 						if (err) return console.error(err);
 						console.log("submitted this: " + docs);
-						res.end("submitted this: " + docs);
+						res.send("submitted this: " + docs);
 					})
 				}
 				// else
@@ -102,20 +102,31 @@ router.post("/stories", (req, res) =>
 				console.log("title already exists");
 				res.send("title already exists");
 			}
-
-
 		})
-
-
 	}
 	else
 	{
 		console.log("wrong pass, can't submit");
 		res.end("wrong pass, can't submit");
 	}
+})
 
-
-
+router.put("/stories/:id", (req, res) =>
+{
+	let id = req.params.id;
+	Story.update({_id: id}, 
+	{
+		$set: 
+		{
+			title: req.body.title,
+			desc: req.body.desc
+		}
+	}, (err, docs) =>
+	{
+		if (err) console.error(err);
+		console.log(docs);
+		res.send("updated story");
+	})
 })
 
 module.exports = router;

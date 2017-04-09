@@ -1,12 +1,19 @@
 <h2>Stories</h2>
 <ul class="stories">
 	<li *ngFor="let story of stories">
-		<span>{{story.title}}</span> <span (click)="editStory(story)">Edit</span> <br> {{story.desc}}
+
+
+		<span>{{story.title}}</span> <button (click)="editStory(story)" *ngIf="!(selectedStoryEditor === story)">Edit</button> <br> {{story.desc}}
 
 		<div *ngIf="selectedStoryEditor === story">
-			this is where the editor will be <br>
-			<button (click)="updateStory()">Update</button>
+
+			<input [(ngModel)]="story.title"> <br>
+			<textarea [(ngModel)]="story.desc"></textarea> <br>
+			
+			<button (click)="updateStory(story)">Update</button>
 		</div>
+
+		<br>
 
 	</li>
 	<div *ngIf="selectedStory">

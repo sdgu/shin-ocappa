@@ -57,6 +57,9 @@ export class StoriesComponent implements OnInit
 
   updateStory(story): void
   {
+
+  	
+
   	this.selectedStoryEditor = 
   	{
   		title: "",
@@ -65,10 +68,11 @@ export class StoriesComponent implements OnInit
   	}
 
   	this.storyService.update(story)
-				  	 .then(() => 
-				  	 {
+	.then(() => 
+	{
 
-				  	 })
+	})
+
   }
 
   ngOnInit() 
